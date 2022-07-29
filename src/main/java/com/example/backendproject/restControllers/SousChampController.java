@@ -49,7 +49,7 @@ public class SousChampController {
         return cs.findOne(idSousChamp) ;
     }
 
-    @GetMapping("/sousChamp/{idChamp}")
+    @GetMapping("/sousChamps/{idChamp}")
     public List<SousChamp> getSousChampByChamp(@PathVariable Long idChamp){
         return cs.findSousChampbyChamp(cr.findById(idChamp).orElse(null))  ;
     }
