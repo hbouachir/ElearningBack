@@ -21,8 +21,7 @@ public class Trimestre implements Serializable {
 
     @Column(name = "TITRE")
     private String titre;
-/*
-    @OneToOne(mappedBy = "trimestre")
-    private Exercice exercice;*/
+
+
 
 }

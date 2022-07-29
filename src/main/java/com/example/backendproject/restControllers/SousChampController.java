@@ -2,7 +2,9 @@ package com.example.backendproject.restControllers;
 
 
 
+import com.example.backendproject.entities.Champ;
 import com.example.backendproject.entities.SousChamp;
+import com.example.backendproject.repos.ChampRepository;
 import com.example.backendproject.service.SousChampService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +19,8 @@ public class SousChampController {
 
     @Autowired
     SousChampService cs;
+    @Autowired
+    ChampRepository cr;
 
     @PostMapping("/sousChamp/{id_champ}")
     public SousChamp addSousChamp(@RequestBody SousChamp c, @PathVariable long id_champ){
@@ -39,9 +43,15 @@ public class SousChampController {
         return cs.findAll();
     }
 
-    @GetMapping("/SousSousChamp/{idSousSousChamp}")
-    public SousChamp getSousChamp(@PathVariable Long idSousSousChamp){
-        return cs.findOne(idSousSousChamp);
+
+    @GetMapping("/sousChamp/{idSousChamp}")
+    public SousChamp getChampById(@PathVariable Long idSousChamp){
+        return cs.findOne(idSousChamp) ;
+    }
+
+    @GetMapping("/sousChamp/{idChamp}")
+    public List<SousChamp> getSousChampByChamp(@PathVariable Long idChamp){
+        return cs.findSousChampbyChamp(cr.findById(idChamp).orElse(null))  ;
     }
 
 }

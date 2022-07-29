@@ -45,6 +45,8 @@ public class SousChampService implements ISousChampService{
         return sr.findAll();
     }
 
+    public List<SousChamp> findSousChampbyChamp(Champ c){
+        return sr.findSousChampByChamp(c);    }
 
     public SousChamp findByTitre(String s){
         return sr.findChampByTitre(s);    }

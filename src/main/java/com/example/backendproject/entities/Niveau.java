@@ -22,9 +22,8 @@ public class Niveau implements Serializable {
     @Column(name = "TITRE")
     private String titre;
 
-/*
-    @OneToOne(mappedBy = "niveau")
-    private Exercice exercice;*/
+
+
 
 
 }

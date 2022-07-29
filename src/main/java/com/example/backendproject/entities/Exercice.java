@@ -18,7 +18,7 @@ public class Exercice implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "exercice_id")
     private long id;
-/*
+
      ////////////1
     @OneToOne
     private Niveau niveau;
@@ -46,7 +46,7 @@ public class Exercice implements Serializable {
 
     private long numero;
 
-    ////////////8 type exercice annexe*/
+    ////////////8 type exercice annexe
 
     ////////////9
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "exercice")

@@ -21,8 +21,8 @@ public class Difficulte implements Serializable {
 
     @Column(name = "TITRE")
     private String titre;
-/*
+
     @OneToOne(mappedBy = "difficulte")
-    private Exercice exercice;*/
+    private Exercice exercice;
 
 }

@@ -29,6 +29,5 @@ public class Champ implements Serializable {
 
 
 
-  /*  @OneToOne(mappedBy = "champ")
-    private Exercice exercice;*/
+
 }
