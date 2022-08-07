@@ -41,7 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.headers().addHeaderWriter(new StaticHeadersWriter("Access-Control-Allow-Origin","*"));
 		http.csrf().disable();
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests().antMatchers("/**").permitAll();
-	//	http.authorizeRequests().antMatchers("/login","/addrole","/addroleauser/{username}/{rolename}","/add","/forgetpassword/{email}","/resetpassword/{email}/{newpass}/{cofirm}","/activecompte/{username}","/all").permitAll();
+		http.authorizeRequests().antMatchers("/login","/addrole","/addroleauser/{username}/{rolename}","/add","/forgetpassword/{email}","/resetpassword/{email}/{newpass}/{cofirm}","/activecompte/{username}","/all").permitAll();
 	//	http.authorizeRequests().antMatchers("/all").hasAuthority("ADMIN");
 
 		http.authorizeRequests().anyRequest().authenticated();
@@ -51,18 +51,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 	}
 
-	@Bean
-	CorsConfigurationSource corsConfigurationSource()
-	{
-		CorsConfiguration configuration = new CorsConfiguration();
-		configuration.setAllowedOrigins(Arrays.asList(  "http://localhost:4200"));
-		configuration.setAllowedMethods(Arrays.asList("GET","POST", "DELETE", "PUT"));
-		//configuration.setAllowCredentials(true);
-	//	configuration.setAllowedHeaders(ImmutableList.of("*"));
-		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-		source.registerCorsConfiguration("/**", configuration);
-		return source;
-	}
-	
+
 
 }

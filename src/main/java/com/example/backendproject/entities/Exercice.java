@@ -27,7 +27,7 @@ public class Exercice implements Serializable {
     private Trimestre trimestre;
     ////////////3
     @OneToOne
-    private Champ champ;
+    private SousChamp sousChamp;
 
 
 
@@ -51,6 +51,9 @@ public class Exercice implements Serializable {
     ////////////9
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "exercice")
     Set<Fichier> fichiers;
+
+    @ManyToOne
+    User user;
 
 
 
