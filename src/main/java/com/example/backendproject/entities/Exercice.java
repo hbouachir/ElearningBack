@@ -27,7 +27,7 @@ public class Exercice implements Serializable {
     private Trimestre trimestre;
     ////////////3
     @OneToOne
-    private Champ champ;
+    private SousChamp sousChamp;
 
 
 
